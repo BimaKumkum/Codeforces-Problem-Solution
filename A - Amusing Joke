@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+string s1,s2,s3;
+int charArr[27]={0},flag,p;
+cin>>s1>>s2>>s3;
+    for(int i=0;i<s1.length();i++){
+        charArr[s1[i]-65]++;
+    }
+    for(int i=0;i<s2.length();i++){
+        charArr[s2[i]-65]++;
+    }
+   flag=1,p=1;
+    for(int i=0;i<s3.length();i++){
+            if(charArr[s3[i]-65] == 0){
+           flag=0;
+           break;
+            }
+          charArr[s3[i]-65]--;
+    }
+    if(flag){
+    for(int i=0;i<26;i++){
+    if(charArr[i]){
+        cout<<"NO"<<endl;
+       p=0;
+        break;
+    }
+    }
+    if(p){
+        cout<<"YES"<<endl;
+    }
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+return 0;
+}
