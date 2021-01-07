@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int W,H,w1,h1,w2,h2;
+cin>>W>>H>>w1>>h1>>w2>>h2;
+ while(H != 0){
+    W += H;
+    if(H == h1){
+        W = max(W-w1,0);
+    }
+    else if(H == h2){
+        W = max(W-w2,0);
+    }
+    H--;
+ }
+ if(W<0){
+    cout<<0<<endl;
+ }
+ else{
+ cout<<W<<endl;
+ }
+return 0;
+}
