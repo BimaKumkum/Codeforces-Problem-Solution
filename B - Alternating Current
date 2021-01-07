@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    stack<int>sk;
+    string s;
+    cin>>s;
+    for(int i=0;i<s.length();i++)
+    {
+        if(sk.empty())
+        {
+            sk.push(s[i]);
+        }
+        else if(s[i] == sk.top())
+        {
+            sk.pop();
+        }
+        else{
+            sk.push(s[i]);
+        }
+    }
+    if(sk.empty()){
+        cout<<"Yes"<<endl;
+    }
+    else{
+        cout<<"No"<<endl;
+    }
+    return 0;
+}
