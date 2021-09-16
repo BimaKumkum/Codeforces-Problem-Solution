@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+char rec[401][401];
+  int t,n;
+  cin>>t;
+  while(t--)
+  {
+      cin>>n;
+      int p=0,q=0,r=0,s=0;
+      for(int i=1;i<=n;i++)
+      {
+          for(int j=1;j<=n;j++)
+          {
+              cin>>rec[i][j];
+              if(rec[i][j] == '*')
+              {
+                  if(p==0){
+                  p = i;
+                  q = j;
+                  }
+                  else
+                  {
+                      r=i;
+                      s=j;
+                  }
+              }
+
+          }
+      }
+
+      if(p==r)
+      {
+          if(p==1||p<n)
+          {
+          p++,r++;
+          }
+         else if(p==n)
+          {
+          p--,r--;
+          }
+      }
+      else if(q==s)
+      {
+          if(q==1||q<n)
+          {
+          q++,s++;
+          }
+         else if(q==n)
+          {
+          q--,s--;
+          }
+      }
+      else
+      {
+          int temp = q;
+          q = s;
+          s = temp;
+      }
+      for(int i=1;i<=n;i++)
+      {
+
+          for(int j=1;j<=n;j++)
+          {
+              if((i==p && j==q)||(i==r && j==s))
+              {
+                  cout<<"*";
+              }
+              else
+              {
+                  cout<<rec[i][j];
+              }
+          }
+          cout<<endl;
+      }
+  }
+}
