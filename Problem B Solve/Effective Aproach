@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+      int n,m,num;
+
+        cin>>n;
+        int position[n+1];
+        for(int i=1;i<=n;i++)
+        {
+            cin>>num;
+            position[num]=i;
+        }
+        cin>>m;
+        long long int vasya=0,petya=0,query;
+        for(int j=1;j<=m;j++)
+        {
+            cin>>query;
+            vasya += position[query];
+            petya += (n-position[query]) +1;
+        }
+
+        cout<<vasya<<" "<<petya<<endl;
+}
