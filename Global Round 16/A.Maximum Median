@@ -1,0 +1,17 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,s;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>s;
+        int mid_point = (n+1)/2;
+        int mid_value = n - (mid_point - 1);
+        int ans = s/mid_value;
+        cout<<ans<<endl;
+    }
+    return 0;
+}
