@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define pii pair<int int>
+#define vi vector<ll>
+#define vii vector<pii>
+#define pb push_back
+#define sort(V) sort(V.begin(),V.end())
+#define YES cout<<"YES"<<endl;
+#define Yes cout<<"Yes"<<endl;
+#define NO cout<<"NO"<<endl;
+#define No cout<<"No"<<endl;
+// |
+//Happy_Coding
+int main()
+{
+    int t,n;
+    cin>>t;
+    deque<int>Anti_fib;
+    deque<int>::iterator it;
+    while(t--)
+    {
+        cin>>n;
+        if(n == 3)
+        {
+           cout<<"3 2 1\n1 3 2\n3 1 2\n";
+           continue;
+        }
+        for(int i=n;i>0;i--)
+        {
+           Anti_fib.push_back(i);
+        }
+        while(n--)
+        {
+          for(it = Anti_fib.begin(); it!=Anti_fib.end();++it)
+          {
+              cout<<*it<<" ";
+          }
+          cout<<endl;
+         it =  Anti_fib.begin();
+         Anti_fib.pop_front();
+         Anti_fib.push_back(*it);
+        }
+        Anti_fib.clear();
+    }
+    return 0;
+}
