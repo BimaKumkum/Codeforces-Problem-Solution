@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define pii pair<int int>
+#define vi vector<ll>
+#define vii vector<pii>
+#define pb push_back
+#define sort(V) sort(V.begin(),V.end())
+#define YES printf("YES\n")
+#define Yes printf("Yes\n")
+#define NO printf("NO\n")
+#define No printf("No\n")
+//Happy_Coding
+ string Rev(string a)
+ {
+    reverse(a.begin(),a.end());
+ 	return a;
+ }
+
+int main()
+{
+    int t,n,k;
+    string s;
+    cin>>t;
+    while(t--)
+    {
+    	cin>>n>>k>>s;
+    	if(k == 0)
+    	{
+    		cout<<"1"<<endl;
+    		continue;
+    	}
+    	else if( s == Rev(s))
+    	{
+    		cout<<"1"<<endl;
+    		continue;
+    	}
+    	else
+    	{
+    		cout<<"2"<<endl;
+    		continue;
+    	}
+
+    }
+	return 0;
+}
