@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define pii pair<int int>
+#define vi vector<ll>
+#define vii vector<pii>
+#define pb push_back
+#define sort(V) sort(V.begin(),V.end())
+#define YES cout<<"YES"<<endl;
+#define Yes cout<<"Yes"<<endl;
+#define NO cout<<"NO"<<endl;
+#define No cout<<"No"<<endl;
+// |
+//Happy_Coding
+
+int main()
+{
+	int t;
+	string s;
+	std::map<char, bool> map;
+	cin>>t;
+	while(t--)
+	{
+		cin>>s;
+		map['r'] = false;
+		map['g'] = false;
+		map['b'] = false;
+
+        bool ans = true;
+
+		for(int i=0;i<6;i++)
+		{
+			//s[i] - 'A' denoted difference between A to this Letter
+			//s[i] -'A' + 'a' implies lowercase of s[i]
+			if(s[i]<'Z' && map[(s[i]-'A')+'a'] == false)
+			{
+				ans = false;
+				break;
+			}
+			else if(s[i] >'a')
+			{
+				map[s[i]] = true;
+			}
+	  	}
+        if(ans)
+            YES
+  	    else
+  	        	NO
+      }
+        return 0;
+}
