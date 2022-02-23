@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define pii pair<int int>
+#define vi vector<ll>
+#define vii vector<pii>
+#define pb push_back
+#define sort(V) sort(V.begin(),V.end())
+#define YES printf("YES\n")
+#define Yes printf("Yes\n")
+#define NO printf("NO\n")
+#define No printf("No\n")
+// |
+//Happy_Coding
+
+int main()
+{
+
+// condition : a1 | a2 = x | y
+	//we put  x = a1|a2 and y value is 0  ,and continue for another new array element.
+
+	int n,t,a;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n;
+		int sum = 0;
+		for(int i=0;i<n;i++)
+		{
+			cin>>a;
+			sum |= a;
+		}
+		cout<<sum<<endl;
+	}
+	return 0;
+}
