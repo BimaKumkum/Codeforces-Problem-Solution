@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,H;
+    cin>>t;
+    while(t--)
+    {
+        int c=0;
+        cin>>n>>H;
+        int a[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        sort(a, a + n);
+        int sum = a[n-1]+a[n-2];
+
+        if(a[n-1] >= H) cout<<1<<endl;
+        else if(sum >= H) cout<<2<<endl;
+        else{
+            if(H%sum == 0) cout<<(H/sum)*2<<endl;
+            else{
+                int ans = (H/sum)*2;
+                if(H%sum >a[n-1]) ans += 2;
+                else
+                    ans++;
+            cout<<ans<<endl;
+            }
+
+        }
+    }
+    return 0;
+}
