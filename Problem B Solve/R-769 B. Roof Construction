@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define pii pair<int int>
+#define vi vector<ll>
+#define vii vector<pii>
+#define pb push_back
+#define sort(V) sort(V.begin(),V.end())
+#define YES printf("YES\n")
+#define Yes printf("Yes\n")
+#define NO printf("NO\n")
+#define No printf("No\n")
+//Happy_Coding
+
+int MSB(int x)
+{
+	return (int)log2(x);
+}
+
+int main()
+{
+	int t,n;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n;
+
+		if(n==2)
+		{
+			cout<<"0 1"<<endl;
+			continue;
+		}
+		int current = n-1;
+		while(current >1)
+		{
+			cout<<current<<" ";
+
+			if(MSB(current-1) != MSB(current))
+			{
+				break;
+			}
+			current--;
+		}
+		for(int i=0;i<=current-1;i++)
+		{
+			cout<<i<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
